@@ -1,0 +1,33 @@
+body {
+        text-align:center;
+        background-color: antiquewhite;
+    }
+
+li {
+        width: 200px;
+        padding: 12px;
+        margin: 6px;
+        border-radius: 6px;
+        color: chocolate;
+        display: inline-block;
+        list-style-type: none;
+        background-color: gold;
+    }
+        
+.banner{
+        background-color: cadetblue;
+        padding: 12px;
+        color:white; 
+    }
+
+table {
+    background-color: rgb(195, 239, 224);
+    width: 600px;
+    margin:0 auto;
+}
+
+th{
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}
