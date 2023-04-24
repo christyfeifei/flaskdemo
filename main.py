@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from datetime import datetime
-from pm25 import get_pm25
+from pm25 import get_pm25, get_pm25_db
 
 app = Flask(__name__)
 
@@ -16,15 +16,15 @@ stocks = [
 def pm25():
 
     if request.method == 'GET':
-        columns, values = get_pm25()
+        columns, values = get_pm25_db()
         # # 單純使用GET => request.args.get(name)
         # if request.args.get('sort'):
         #     columns, values = get_pm25(True)
     if request.method == 'POST':
         if request.form.get('sort'):
-            columns, values = get_pm25(True)
+            columns, values = get_pm25_db(True)
         else:
-            columns, values = get_pm25()
+            columns, values = get_pm25_db()
 
     return render_template('./pm25.html', **locals())
 
