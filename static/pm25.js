@@ -1,10 +1,8 @@
-const dateE1 = document.querySelector(".date");
+const dateEl = document.querySelector(".date");
 
-dateE1.innerText = getTime();
+dateEl.innerText = getTime();
 
-
-
-//取得時、分、秒跟年、月、日
+//取得時分秒跟年月日
 function getTime(fullTime = true) {
     let now = new Date();
     let year = now.getFullYear();
@@ -13,10 +11,10 @@ function getTime(fullTime = true) {
     let hours = now.getHours();
     let minutes = String(now.getMinutes()).padStart(2, "0");
     let seconds = String(now.getSeconds()).padStart(2, "0");
-    
+
     if (fullTime) {
         return `${year}/${month}/${date} ${hours}:${minutes}:${seconds}`;
     }
-    
+
     return `${year}/${month}/${date}`;
 }

@@ -11,6 +11,7 @@ pm25 integer,
 datacreationdate datetime,
 itemunit text
 )
+
 '''
 
 conn, cursor = None, None

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首頁</title>
 </head>
+
 <body>
     <h1>歡迎光臨!{{content.name}}</h1>
-    <p>現在時刻:<span>{{content['date']}}</span></p>
-    <a href="/pm25">pm2.5資訊</a>
-    
+    <p>現在時刻:<span>{{content["date"]}}</span></p>
+    <a href="/pm25">pm2.5資訊</a><br>
+    <a href="/pm25-charts">pm2.5圖形繪製</a><br>
+    <a href="/update">更新資料庫</a>
 </body>
+
 </html>

@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM2.5資訊</title>
     <link rel="stylesheet" href="../static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        table {
+            background-color: rgb(13, 31, 134);
+            color: white;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        th {
+            font-size: 24px;
+            background-color: black;
+            color: white;
+        }
+
+        #sort {
+            background-color: aqua;
+        }
+
+        @media screen and (max-width:768px) {
+            table {
+                width: 100%;
+            }
+
+            th {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <h1 class="banner">PM2.5資訊</h1>
-    <p>目前時間：<span class="date">2023/04/20 19:50:50</span></p>
+    <a href="/">回首頁</a>
+    <p>目前時間:<span class="date">2023/04/20 19:50:50</span></p>
     <form action="/pm25" method="POST" style="margin-bottom: 12px;">
         <input type="submit" value="排序" name="sort" id="sort">
         <input type="submit" value="更新" name="update">
-
-
     </form>
 
 
     {% if not columns %}
-    <h2 style="color: red">資料忙碌中，請稍候再試</h2>
+    <h2 style="color:red">資料忙碌中，請稍後在試</h2>
     {% else %}
     <table border="1">
-        <thread>
+        <thead>
             <tr>
                 {% for column in columns %}
-                <th> {{column}}</th>
+                <th>{{column}}</th>
                 {% endfor %}
             </tr>
-        </thread>
+        </thead>
         <tbody>
             {% for value in values %}
             <tr>
                 {% for data in value %}
                 <td>{{data}}</td>
                 {% endfor %}
-            </tr>            
+            </tr>
             {% endfor %}
         </tbody>
     </table>
     {% endif %}
     <script src="../static/pm25.js"></script>
+    <<<<<<< HEAD=======<script>
+        // document.querySelector("h1").innerText = "JAVASCRIPT";
+        // $("h1").text("JQuery!");
+        </script>
+        >>>>>>> database
 </body>
+
 </html>
